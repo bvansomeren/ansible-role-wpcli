@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  sudo: yes
+  roles:
+    - geerlingguy.php
+    - bvansomeren.wpcli
+  vars:
+    - php_enable_webserver: false

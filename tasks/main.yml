@@ -1,0 +1,12 @@
+---
+# tasks file for bvansomeren.wpcli
+#
+- name: install wp-cli if not already installed
+  get_url: url={{ wpcli_url }}  dest={{ wpcli_dest}} mode=0755 force={{ wpcli_reinstall }}
+
+- name: show wp-cli version
+  sudo: no
+  command: wp --info
+  register: wpoutput
+
+- debug: var=wpoutput
